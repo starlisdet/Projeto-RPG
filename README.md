@@ -1,5 +1,5 @@
-# IMC_Yann
-App do IMC do aluno Yann
+# Projeto-RPG
+App do projeto de RPG
 Para fazê-lo funcionar no cordova deve-se digitar:
 1. npm install
 2. cordova platform add browser
