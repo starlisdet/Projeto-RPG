@@ -2,7 +2,7 @@ var mysql = require('mysql');
 
 var con = mysql.createConnection({
     host: "localhost",
-    port: 3306,
+    port: 3307,
     user: "root",
     password: "alunofatec"
   });
@@ -13,7 +13,7 @@ var con = mysql.createConnection({
         return;
       }
     console.log("Connected!");
-    con.query("SELECT * FROM dbQualquer.testeDb", function (error, result, fields) {
+    con.query("SELECT * FROM projetorpg.user", function (error, result, fields) {
         if(error){
             console.log('Error connecting to the MySQL Database');
             return;
