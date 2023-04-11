@@ -8,7 +8,7 @@ form.addEventListener('submit', e => {
   e.preventDefault();
   const name = document.querySelector('#name').value.trim();
   const email = document.querySelector('#email').value.trim();
-  const phone = document.querySelector('#phone').value.trim();
+  const password = document.querySelector('#password').value.trim();
   const id = document.querySelector('#id').value;
 
   if (!name || !email) {
@@ -19,7 +19,7 @@ form.addEventListener('submit', e => {
   const user = {
     name,
     email,
-    phone,
+    password,
     id: id || new Date().getTime().toString()
   };
 
@@ -42,19 +42,19 @@ function renderUsers() {
     const tr = document.createElement('tr');
     const tdName = document.createElement('td');
     const tdEmail = document.createElement('td');
-    const tdPhone = document.createElement('td');
+    const tdPassword = document.createElement('td');
     const tdActions = document.createElement('td');
     const editButton = document.createElement('button');
     const deleteButton = document.createElement('button');
 
     tdName.textContent = user.name;
     tdEmail.textContent = user.email;
-    tdPhone.textContent = user.phone || '-';
+    tdPassword.textContent = user.password || '-';
     editButton.textContent = 'Edit';
     editButton.addEventListener('click', () => {
       document.querySelector('#name').value = user.name;
       document.querySelector('#email').value = user.email;
-      document.querySelector('#phone').value = user.phone || '';
+      document.querySelector('#password').value = user.password || '';
       document.querySelector('#id').value = user.id;
     });
 
@@ -71,7 +71,7 @@ function renderUsers() {
 
     tr.appendChild(tdName);
     tr.appendChild(tdEmail);
-    tr.appendChild(tdPhone);
+    tr.appendChild(tdPassword);
     tr.appendChild(tdActions);
 
     userList.appendChild(tr);
@@ -80,4 +80,5 @@ function renderUsers() {
 
 // Update user
 function clearForm() {
-  document.querySelector('#user-form').reset
+  document.querySelector('#user-form').reset;
+}
