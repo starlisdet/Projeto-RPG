@@ -24,5 +24,3 @@ var con = mysql.createConnection({
       con.end()
 
   });
-
-
