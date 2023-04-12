@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Sheet</title>
+  <link rel="stylesheet" href="character_sheet.css">
+</head>
+<body>
+  <header>
+    <h1>Character Sheet</h1>
+  </header>
+  <main>
+    <form id="character-form">
+      <div class="field-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="field-group">
+        <label for="race">Race:</label>
+        <input type="text" id="race" name="race" required>
+      </div>
+      <div class="field-group">
+        <label for="class">Class:</label>
+        <input type="text" id="class" name="class" required>
+      </div>
+      <div class="field-group">
+        <label for="level">Level:</label>
+        <input type="number" id="level" name="level" required>
+      </div>
+      <div class="field-group">
+        <label for="hp">Hit Points:</label>
+        <input type="number" id="hp" name="hp" required>
+      </div>
+      <div class="field-group">
+        <label for="ac">Armor Class:</label>
+        <input type="number" id="ac" name="ac" required>
+      </div>
+      <div class="field-group">
+        <label for="str">Strength:</label>
+        <input type="number" id="str" name="str" min="1" max="20" required>
+      </div>
+      <div class="field-group">
+        <label for="dex">Dexterity:</label>
+        <input type="number" id="dex" name="dex" min="1" max="20" required>
+      </div>
+      <div class="field-group">
+        <label for="con">Constitution:</label>
+        <input type="number" id="con" name="con" min="1" max="20" required>
+      </div>
+      <div class="field-group">
+        <label for="int">Intelligence:</label>
+        <input type="number" id="int" name="int" min="1" max="20" required>
+      </div>
+      <div class="field-group">
+        <label for="wis">Wisdom:</label>
+        <input type="number" id="wis" name="wis" min="1" max="20" required>
+      </div>
+      <div class="field-group">
+        <label for="cha">Charisma:</label>
+        <input type="number" id="cha" name="cha" min="1" max="20" required>
+      </div>
+      <div class="button-group">
+        <button type="submit">Save</button>
+        <button type="button" id="load-button">Load</button>
+        <button type="button" id="delete-button">Delete</button>
+      </div>
+    </form>
+  </main>
+  <script src="character_sheet.js"></script>
+</body>
+</html>
