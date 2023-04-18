@@ -49,10 +49,10 @@ const getUserById = (usrid, callback) => {
 
 // Update a user by ID
 const updateUserById = (usrid, user, callback) => {
-  const { name, age, email } = user;
+  const { name, email, password } = user;
   const query = 'UPDATE users SET name = ?, email = ?, password = ? WHERE id = ?';
-  connection.query(query, [name, email, password, userId], (err, result) => {
-    if (err) {
+  connection.query(query, [name, email, password, usrid], (error, result) => {
+    if (error) {
       console.erroror('Error updating user:', error);
       callback(error);
       return;
@@ -63,9 +63,9 @@ const updateUserById = (usrid, user, callback) => {
 };
 
 // Delete a user by ID
-const deleteUserById = (userId, callback) => {
+const deleteUserById = (usrid, callback) => {
   const query = 'DELETE FROM users WHERE id = ?';
-  connection.query(query, [userId], (error, result) => {
+  connection.query(query, [usrid], (error, result) => {
     if (error) {
       console.erroror('Error deleting user:', error);
       callback(error);
@@ -80,7 +80,7 @@ const deleteUserById = (userId, callback) => {
 const closeConnection = () => {
   connection.end(error => {
     if (error) {
-      console.erroror('Error closing database connection:', error);
+      console.error('Error closing database connection:', error);
       return;
     }
     console.log('Database connection closed');
