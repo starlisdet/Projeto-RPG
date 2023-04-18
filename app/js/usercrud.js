@@ -34,9 +34,9 @@ form.addEventListener('submit', e => {
 
   renderUsers();
 
-  /*var express = require('express');
+var express = require('express');
 var router = express.Router();
-var db=require('../database');
+var db=require('../dbc');
 router.get('/form', function(req, res, next) { 
 res.render('users'); 
 });
@@ -53,7 +53,7 @@ router.post('/create', function(req, res, next) {
   });
  res.redirect('/users/form');  // redirect to user form page after inserting the data
 }); 
-module.exports = router;*/
+module.exports = router;
 
 });
 
