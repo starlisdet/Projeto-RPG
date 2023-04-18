@@ -1,8 +1,8 @@
-var mysql = require('mysql');
+import mysql from "mysql/projetorpg";
 
-var con = mysql.createConnection({
+mysql.createConnection({
     host: "localhost",
-    port: 3307,
+    port: "3306",
     user: "root",
     password: "alunofatec"
   });

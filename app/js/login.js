@@ -6,7 +6,7 @@ form.addEventListener('submit', e => {
   const password = document.querySelector('#password').value.trim();
 
   // Get existing users from localStorage
-  const users = JSON.parse(localStorage.getItem('users')) || [];
+  const users = JSON.parse(localStorage.getItem('user')) || [];
 
   // Check if user exists
   const user = users.find(u => u.email === email);

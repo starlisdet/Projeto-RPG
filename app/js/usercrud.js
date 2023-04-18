@@ -1,8 +1,7 @@
-
 // Create a new user
 const createUser = (user, callback) => {
   const { name, email, password } = user;
-  const query = 'INSERT INTO users (name, email, password) VALUES (?, ?, ?)';
+  const query = 'INSERT INTO user (name, email, password) VALUES (?, ?, ?)';
   connection.query(query, [name, email, password], (error, result) => {
     if (error) {
       console.error('Error creating user:', error);
@@ -16,30 +15,30 @@ const createUser = (user, callback) => {
 
 // Get all users
 const getAllUsers = callback => {
-  const query = 'SELECT * FROM users';
+  const query = 'SELECT * FROM user';
   connection.query(query, (error, results) => {
     if (error) {
-      console.error('Error getting users:', error);
+      console.error('Error getting user:', error);
       callback(error);
       return;
     }
-    console.log('Users retrieved successfully');
+    console.log('User retrieved successfully');
     callback(null, results);
   });
 };
 
 // Get a user by ID
 const getUserById = (usrid, callback) => {
-  const query = 'SELECT * FROM users WHERE id = ?';
+  const query = 'SELECT * FROM user WHERE id = ?';
   connection.query(query, [usrid], (error, result) => {
     if (error) {
-      console.error('Error getting user:', err);
+      console.error('Error getting user:', error);
       callback(error);
       return;
     }
     if (result.length === 0) {
       console.error('User not found');
-      callback(new Error('User not found'));
+      callback(new error('User not found'));
       return;
     }
     console.log('User retrieved successfully');
@@ -50,10 +49,10 @@ const getUserById = (usrid, callback) => {
 // Update a user by ID
 const updateUserById = (usrid, user, callback) => {
   const { name, email, password } = user;
-  const query = 'UPDATE users SET name = ?, email = ?, password = ? WHERE id = ?';
+  const query = 'UPDATE user SET name = ?, email = ?, password = ? WHERE id = ?';
   connection.query(query, [name, email, password, usrid], (error, result) => {
     if (error) {
-      console.erroror('Error updating user:', error);
+      console.error('Error updating user:', error);
       callback(error);
       return;
     }
@@ -64,10 +63,10 @@ const updateUserById = (usrid, user, callback) => {
 
 // Delete a user by ID
 const deleteUserById = (usrid, callback) => {
-  const query = 'DELETE FROM users WHERE id = ?';
+  const query = 'DELETE FROM user WHERE id = ?';
   connection.query(query, [usrid], (error, result) => {
     if (error) {
-      console.erroror('Error deleting user:', error);
+      console.error('Error deleting user:', error);
       callback(error);
       return;
     }

@@ -18,7 +18,7 @@ form.addEventListener('submit', e => {
   };
 
   // Get existing users from localStorage
-  let users = JSON.parse(localStorage.getItem('users')) || [];
+  let users = JSON.parse(localStorage.getItem('user')) || [];
 
   // Check if user already exists
   const existingUser = users.find(u => u.email === email);
@@ -29,7 +29,7 @@ form.addEventListener('submit', e => {
 
   // Add new user to localStorage
   users.push(user);
-  localStorage.setItem('users', JSON.stringify(users));
+  localStorage.setItem('user', JSON.stringify(user));
 
   alert('User registered successfully.');
   form.reset();
