@@ -1,4 +1,3 @@
--- Active: 1681252546488@@127.0.0.1@3306
 create SCHEMA projetorpg;
 create table user {
     usrid int auto_increment PRIMARY KEY,
@@ -17,7 +16,7 @@ CREATE TABLE characters (
   str INT NOT NULL,
   dex INT NOT NULL,
   con INT NOT NULL,
-  int INT NOT NULL,
+  intelligence INT NOT NULL,
   wis INT NOT NULL,
   cha INT NOT NULL
 );
