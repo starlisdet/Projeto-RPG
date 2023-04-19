@@ -4,7 +4,7 @@ form.addEventListener('submit', e => {
   e.preventDefault();
   const name = document.querySelector('#name').value.trim();
   const email = document.querySelector('#email').value.trim();
-  const password = document.querySelector('#password').value.trim();
+  const password = document.querySelector('#psw').value.trim();
   const confirmPassword = document.querySelector('#confirm-password').value.trim();
 
   if (password !== confirmPassword) {

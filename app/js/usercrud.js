@@ -1,8 +1,8 @@
 // Create a new user
 const createUser = (user, callback) => {
-  const { name, email, password } = user;
-  const query = 'INSERT INTO user (name, email, password) VALUES (?, ?, ?)';
-  connection.query(query, [name, email, password], (error, result) => {
+  const { name, email, psw } = user;
+  const query = 'INSERT INTO user (name, email, psw) VALUES (?, ?, ?)';
+  connection.query(query, [name, email, psw], (error, result) => {
     if (error) {
       console.error('Error creating user:', error);
       callback(error);
@@ -48,9 +48,9 @@ const getUserById = (usrid, callback) => {
 
 // Update a user by ID
 const updateUserById = (usrid, user, callback) => {
-  const { name, email, password } = user;
-  const query = 'UPDATE user SET name = ?, email = ?, password = ? WHERE id = ?';
-  connection.query(query, [name, email, password, usrid], (error, result) => {
+  const { name, email, psw } = user;
+  const query = 'UPDATE user SET name = ?, email = ?, psw = ? WHERE id = ?';
+  connection.query(query, [name, email, psw, usrid], (error, result) => {
     if (error) {
       console.error('Error updating user:', error);
       callback(error);
